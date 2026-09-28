@@ -1,0 +1,85 @@
+Bike Sharing Demand Prediction
+
+Project Overview
+
+This project predicts hourly bike rental demand using Linear Regression.
+
+The dataset contains information about bike rentals along with temporal, weather, and environmental variables. The objective is to understand the factors associated with rental demand and build a regression model capable of predicting total bike rentals.
+
+Dataset
+
+The dataset contains hourly bike-sharing records with variables related to:
+
+- Date and time
+- Season
+- Weather conditions
+- Temperature
+- Humidity
+- Windspeed
+- Working days and holidays
+- Total bike rentals
+
+Target Variable
+
+- `cnt` — total number of bike rentals
+
+Methodology
+
+- Data exploration and quality checks
+- Missing-value and duplicate checks
+- Exploratory data analysis
+- Correlation analysis
+- Feature selection
+- Feature encoding
+- Feature scaling
+- Target transformation using `log1p`
+- Linear Regression
+- Cross-validation
+- Residual analysis
+- Predicted vs actual analysis
+- Model interpretation using regression coefficients
+
+Feature Engineering
+
+The variables `casual` and `registered` were excluded because they directly contribute to the target variable:
+
+`cnt = casual + registered`
+
+Other redundant variables were also removed before modelling.
+
+Categorical variables were one-hot encoded, while numerical variables were standardized as part of the modelling pipeline.
+
+Model
+
+Linear Regression was used as the primary prediction model.
+
+Because bike rental demand is positively skewed, the target variable was transformed using `log1p` during training. Predictions were converted back to the original scale for evaluation.
+
+Evaluation
+
+The model was evaluated using:
+
+- R² Score
+- Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
+- Cross-validation
+- Residual analysis
+- Predicted vs actual visualization
+
+Technologies
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Plotly
+- Scikit-learn
+- Jupyter Notebook
+
+Project Structure
+
+Bike-Sharing-Demand-Prediction/
+│
+├── Bike_Sharing_Demand_Prediction_Linear_Regression.ipynb
+└── README.md
